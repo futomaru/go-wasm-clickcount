@@ -1,7 +1,7 @@
 .PHONY: help wasm clean serve
 
 GO ?= go
-WASM_TARGET := web/main.wasm
+WASM_TARGET := docs/main.wasm
 
 help:
 	@printf "Available targets:\n"

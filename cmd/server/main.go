@@ -8,15 +8,15 @@ import (
 
 func main() {
 	const (
-		webDir = "web"
-		addr   = ":8080"
+		docsDir = "docs"
+		addr    = ":8080"
 	)
 
-	if _, err := os.Stat(webDir); err != nil {
-		log.Fatalf("missing web assets: %v", err)
+	if _, err := os.Stat(docsDir); err != nil {
+		log.Fatalf("missing docs assets: %v", err)
 	}
 
-	http.Handle("/", http.FileServer(http.Dir(webDir)))
+	http.Handle("/", http.FileServer(http.Dir(docsDir)))
 
 	log.Printf("listening on http://localhost%s", addr)
 	log.Fatal(http.ListenAndServe(addr, nil))
